@@ -1,0 +1,623 @@
+/* ========================================
+   全体的なスタイル定義
+   ======================================== */
+
+/* すべての要素に共通するリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSSカラー変数（統一感を出すために定義） */
+:root {
+    --primary-color: #2C3E50;      /* メインカラー（濃紺） */
+    --secondary-color: #34495E;    /* サブカラー（深灰青） */
+    --accent-color: #1ABC9C;       /* アクセントカラー（青緑） */
+    --text-dark: #2C3E50;          /* 濃いテキスト色 */
+    --text-light: #5D6D7B;         /* 薄いテキスト色 */
+    --bg-light: #ECF0F1;           /* 背景色（明るい） */
+    --bg-white: #FFFFFF;           /* 背景色（白） */
+    --border-color: #BDC3C7;       /* ボーダー色 */
+}
+
+/* ボディ全体のスタイル */
+body {
+    font-family: 'Segoe UI', 'Trebuchet MS', 'Noto Sans JP', 'Hiragino Sans', 'YuGothic', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+}
+
+/* テキストの選択時のスタイル */
+::selection {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ========================================
+   ナビゲーション
+   ======================================== */
+
+/* ナビゲーションバー */
+.navbar {
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* ハンバーガーメニュー（スマートフォン用） */
+.menu-toggle {
+    display: none;
+}
+
+.menu-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-button span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* ========================================
+   コンテナ（幅調整用） 
+   ======================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   ヒーローセクション
+   ======================================== */
+
+.hero {
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.catchcopy {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ========================================
+   セクション共通スタイル
+   ======================================== */
+
+/* セクションタイトル */
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--text-dark);
+    position: relative;
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* セクションタイトルの下線装飾 */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* ========================================
+   特徴セクション
+   ======================================== */
+
+.features {
+    background-color: var(--bg-light);
+    padding: 80px 20px;
+}
+
+/* グリッドレイアウト（3列） */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* 特徴カード */
+.feature-card {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-top: 4px solid var(--accent-color);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 特徴カードのアイコン */
+.feature-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+.feature-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* ========================================
+   学びのカード
+   ======================================== */
+
+.learning-cards {
+    background-color: var(--bg-white);
+    padding: 80px 20px;
+}
+
+/* 学びのカードグリッド（4列） */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* 見どころカード */
+.learning-card {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.learning-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* カードの画像部分 */
+.card-image {
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+
+.image-placeholder {
+    font-size: 80px;
+}
+
+/* カード内のテキスト部分 */
+.learning-card h3 {
+    font-size: 20px;
+    margin: 20px 20px 10px 20px;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+.learning-card p {
+    margin: 0 20px 20px 20px;
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   詳細情報セクション
+   ======================================== */
+
+.cta-section {
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.cta-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* CTAボタングループ */
+.cta-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 15px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 16px;
+    border: 2px solid transparent;
+}
+
+/* プライマリボタン */
+.button-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #16A085;
+}
+
+/* セカンダリボタン */
+.button-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.button-secondary:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   パン屋セクション
+   ======================================== */
+
+.bakeries {
+    background-color: var(--bg-white);
+    padding: 80px 20px;
+}
+
+/* パン屋グリッド */
+.bakeries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* パン屋カード */
+.bakery-card {
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--accent-color);
+}
+
+.bakery-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* パン屋アイコン */
+.bakery-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.bakery-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.bakery-location {
+    font-size: 13px;
+    color: var(--accent-color);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.bakery-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ========================================
+   地図セクション
+   ======================================== */
+
+.map-section {
+    background-color: var(--bg-light);
+    padding: 80px 20px;
+}
+
+.map-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* 地図画像領域 */
+.map-image {
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    border-radius: 8px;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.map-placeholder {
+    font-size: 120px;
+    margin-bottom: 20px;
+}
+
+.map-info {
+    color: white;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+    opacity: 0.95;
+}
+
+/* 地図詳細情報 */
+.map-details {
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.map-details h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.access-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.access-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-dark);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.access-list li:last-child {
+    border-bottom: none;
+}
+
+.access-list strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.footer {
+    background-color: #1A252F;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer p {
+    margin: 0;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   レスポンシブデザイン（タブレット以下）
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* キャッチコピーをスマートフォンサイズに調整 */
+    .catchcopy {
+        font-size: 32px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    /* セクションタイトルをスマートフォンサイズに調整 */
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    /* パディング調整 */
+    .features,
+    .learning-cards,
+    .bakeries,
+    .map-section,
+    .cta-section {
+        padding: 60px 20px;
+    }
+
+    /* ハンバーガーメニューを表示 */
+    .menu-button {
+        display: flex;
+    }
+
+    /* メニューを隠す */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        gap: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px 20px;
+    }
+
+    /* チェックボックスがチェックされたときにメニューを表示 */
+    #menu-toggle:checked ~ .navbar .nav-menu {
+        display: flex;
+    }
+
+    /* グリッドカラムを1列に調整 */
+    .features-grid,
+    .cards-grid,
+    .bakeries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 地図コンテンツを1列に調整 */
+    .map-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* CTAボタンを縦並びに */
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   アニメーション
+   ======================================== */
+
+/* スムーズなスクロール */
+html {
+    scroll-behavior: smooth;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card,
+.learning-card {
+    animation: fadeIn 0.6s ease-out;
+}

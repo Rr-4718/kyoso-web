@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- 文字コードをUTF-8に設定 -->
+    <meta charset="UTF-8">
+    <!-- レスポンシブデザイン対応 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ページのタイトル -->
+    <title>つくば市 - 研究と歴史、そして心地よい暮らし</title>
+    <!-- 外部CSSファイルを読み込み -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ハンバーガーメニュー用のチェックボックス（スマートフォン対応） -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    
+    <!-- ナビゲーションバー -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <!-- ロゴ -->
+                <div class="logo">
+                    <h1>つくば市</h1>
+                </div>
+                <!-- ハンバーガーメニューボタン -->
+                <label for="menu-toggle" class="menu-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <!-- メニュー -->
+                <ul class="nav-menu">
+                    <li><a href="#hero">ホーム</a></li>
+                    <li><a href="#features">つくば市の魅力</a></li>
+                    <li><a href="#details">各地域の特色</a></li>
+                    <li><a href="#bakeries">パン屋</a></li>
+                    <li><a href="#map">アクセス</a></li>
+                    <li><a href="#cta">詳細情報</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- ヒーローセクション（トップ画像と大見出し） -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h2 class="catchcopy">研究と歴史が彩る、心地よいまち</h2>
+                <p class="tagline">つくば市への観光ガイド - 日本を代表する研究都市</p>
+            </div>
+        </section>
+
+        <!-- つくば市の魅力セクション -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">つくば市の3つの側面</h2>
+                
+                <div class="features-grid">
+                    <!-- 側面1: 研究のまち -->
+                    <div class="feature-card">
+                        <div class="feature-icon">🔬</div>
+                        <h3>研究のまち</h3>
+                        <p>筑波大学をはじめ、多くの研究機関が集積するつくば市。日本を代表する研究都市として、最先端の科学技術が生まれ、世界へ発信されています。JAXA筑波宇宙センターなど、見学できる施設も豊富です。</p>
+                    </div>
+
+                    <!-- 側面2: ラーメンのまち -->
+                    <div class="feature-card">
+                        <div class="feature-icon">🍜</div>
+                        <h3>ラーメンのまち</h3>
+                        <p>つくば市は「ラーメンのまち」として知られており、多くの個性的なラーメン店が軒を連ねています。こってり系から淡麗系まで、様々な味を楽しめます。ラーメン好きの聖地として、観光客にも人気があります。</p>
+                    </div>
+
+                    <!-- 側面3: 子育てのまち -->
+                    <div class="feature-card">
+                        <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                        <h3>子育てのまち</h3>
+                        <p>計画的に設計された都市設備が整い、子育てに優しい環境が整備されています。公園の多さ、医療施設、教育施設が充実しており、家族連れの来訪にも最適です。安全で快適な生活空間が実現しています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 各地域の詳細情報セクション -->
+        <section id="details" class="learning-cards">
+            <div class="container">
+                <h2 class="section-title">つくば市で見どころ</h2>
+                
+                <div class="cards-grid">
+                    <!-- カード1: 筑波山 -->
+                    <div class="learning-card">
+                        <div class="card-image">
+                            <div class="image-placeholder">⛩️</div>
+                        </div>
+                        <h3>筑波山</h3>
+                        <p>茨城県のシンボルである筑波山。ケーブルカーやロープウェイで気軽に登ることができ、頂上からは関東平野の絶景が広がります。四季折々の美しさが魅力です。</p>
+                    </div>
+
+                    <!-- カード2: JAXA筑波宇宙センター -->
+                    <div class="learning-card">
+                        <div class="card-image">
+                            <div class="image-placeholder">🚀</div>
+                        </div>
+                        <h3>JAXA筑波宇宙センター</h3>
+                        <p>日本の宇宙開発の中心施設。実物大のロケット展示や最新の宇宙技術について学べます。科学好きな大人から子どもまで、楽しめる施設です。</p>
+                    </div>
+
+                    <!-- カード3: 筑波大学 -->
+                    <div class="learning-card">
+                        <div class="card-image">
+                            <div class="image-placeholder">🎓</div>
+                        </div>
+                        <h3>筑波大学</h3>
+                        <p>日本を代表する研究大学。広大なキャンパスは、季節ごとに異なる表情を見せます。図書館やミュージアムも一般に開放されています。</p>
+                    </div>
+
+                    <!-- カード4: ラーメン巡り -->
+                    <div class="learning-card">
+                        <div class="card-image">
+                            <div class="image-placeholder">🍜</div>
+                        </div>
+                        <h3>ラーメン巡り</h3>
+                        <p>つくば市内には50店舗以上のラーメン店があります。地元の味から新進気鋭の店まで、つくばのラーメン文化を体験する最高の方法です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- パン屋紹介セクション -->
+        <section id="bakeries" class="bakeries">
+            <div class="container">
+                <h2 class="section-title">つくば市のおすすめパン屋</h2>
+                
+                <div class="bakeries-grid">
+                    <!-- パン屋1 -->
+                    <div class="bakery-card">
+                        <div class="bakery-icon">🥐</div>
+                        <h3>ベーカリー蒼</h3>
+                        <p class="bakery-location">つくば市天久保</p>
+                        <p>毎日焼きたてのパンが並ぶ、地元の人気店。塩パンと抹茶あんぱんが看板商品です。朝早くから営業しており、サラリーマンの朝食の定番となっています。</p>
+                    </div>
+
+                    <!-- パン屋2 -->
+                    <div class="bakery-card">
+                        <div class="bakery-icon">🍞</div>
+                        <h3>パン工房ルシェ</h3>
+                        <p class="bakery-location">つくば市松野木</p>
+                        <p>フランスの伝統を守りながら、日本の素材を活かしたパンを製造。クロワッサンとバゲットが評判です。焼きたてパンの香りが素晴らしく、多くの観光客が訪れます。</p>
+                    </div>
+
+                    <!-- パン屋3 -->
+                    <div class="bakery-card">
+                        <div class="bakery-icon">🥖</div>
+                        <h3>ベーカリーモア</h3>
+                        <p class="bakery-location">つくば市上ノ室</p>
+                        <p>こだわりの小麦粉と天然酵母を使ったヘルシーなパン屋。玄米パンやライ麦パンなど、栄養豊富なパンが揃っています。健康志向の顧客に高く評価されています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- つくば市の地図セクション -->
+        <section id="map" class="map-section">
+            <div class="container">
+                <h2 class="section-title">つくば市の位置と交通</h2>
+                
+                <div class="map-content">
+                    <div class="map-image">
+                        <div class="map-placeholder">🗺️</div>
+                        <p class="map-info">つくば市は茨城県の南部に位置し、東京から高速バスで約50分、つくばエクスプレスで約45分でアクセスできます。</p>
+                    </div>
+                    
+                    <div class="map-details">
+                        <h3>アクセス情報</h3>
+                        <ul class="access-list">
+                            <li><strong>最寄り駅：</strong>つくばエクスプレス「つくば駅」</li>
+                            <li><strong>東京から：</strong>高速バス約50分、つくばエクスプレス約45分</li>
+                            <li><strong>飛行場：</strong>成田国際空港から約90分</li>
+                            <li><strong>主要施設：</strong>筑波山、JAXA筑波宇宙センター、筑波大学</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 詳細情報セクション -->
+        <section id="cta" class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>つくば市への観光を計画しましょう</h2>
+                    <p>研究の最前線から、ラーメンの味わい、そして子育ての安心まで。</p>
+                    <p>つくば市は、多くの魅力に満ちたまちです。</p>
+                    <p>詳しくはつくば市ホームページをご覧ください。</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#" class="button button-primary">つくば市ホームページへ</a>
+                        <a href="#" class="button button-secondary">観光ガイド</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 つくば市. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 外部JavaScriptファイルを読み込み -->
+    <script src="script.js"></script>
+</body>
+</html>
