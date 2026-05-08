@@ -9,21 +9,21 @@
     box-sizing: border-box;
 }
 
-/* CSSカラー変数（統一感を出すために定義） */
+/* CSSカラー変数（統一感を持たせるために定義） */
 :root {
-    --primary-color: #2C3E50;      /* メインカラー（濃紺） */
-    --secondary-color: #34495E;    /* サブカラー（深灰青） */
-    --accent-color: #1ABC9C;       /* アクセントカラー（青緑） */
-    --text-dark: #2C3E50;          /* 濃いテキスト色 */
-    --text-light: #5D6D7B;         /* 薄いテキスト色 */
-    --bg-light: #ECF0F1;           /* 背景色（明るい） */
-    --bg-white: #FFFFFF;           /* 背景色（白） */
-    --border-color: #BDC3C7;       /* ボーダー色 */
+    --primary-color: #2C3E50;       /* メインカラー（濃い青灰色） */
+    --secondary-color: #34495E;     /* サブカラー（青灰色） */
+    --accent-color: #8B6F47;        /* アクセントカラー（こげ茶） */
+    --text-dark: #2C3E50;           /* 濃いテキスト色 */
+    --text-light: #7F8C8D;          /* 薄いテキスト色 */
+    --bg-light: #ECF0F1;            /* 背景色（薄い） */
+    --bg-white: #FFFFFF;            /* 背景色（白） */
+    --border-color: #D5DBDB;        /* ボーダー色 */
 }
 
 /* ボディ全体のスタイル */
 body {
-    font-family: 'Segoe UI', 'Trebuchet MS', 'Noto Sans JP', 'Hiragino Sans', 'YuGothic', sans-serif;
+    font-family: 'Segoe UI', 'Hiragino Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-white);
@@ -46,7 +46,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 3px solid var(--primary-color);
 }
 
 .navbar .container {
@@ -66,7 +65,6 @@ body {
     font-size: 24px;
     color: var(--primary-color);
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
 /* ナビゲーションメニュー */
@@ -84,7 +82,7 @@ body {
 }
 
 .nav-menu a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* ハンバーガーメニュー（スマートフォン用） */
@@ -123,9 +121,9 @@ body {
 .hero {
     background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
     color: white;
-    padding: 100px 20px;
+    padding: 120px 20px;
     text-align: center;
-    min-height: 400px;
+    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,18 +134,38 @@ body {
 }
 
 .catchcopy {
-    font-size: 48px;
+    font-size: 52px;
     font-weight: bold;
     margin-bottom: 20px;
     line-height: 1.2;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .tagline {
     font-size: 20px;
-    margin-bottom: 30px;
-    opacity: 0.9;
+    margin-bottom: 35px;
+    opacity: 0.95;
     font-weight: 300;
+}
+
+/* 共通ボタンスタイル */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(139, 111, 71, 0.3);
 }
 
 /* ========================================
@@ -162,7 +180,6 @@ body {
     color: var(--text-dark);
     position: relative;
     padding-bottom: 20px;
-    letter-spacing: 1px;
 }
 
 /* セクションタイトルの下線装飾 */
@@ -173,128 +190,136 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
-    height: 4px;
+    height: 3px;
     background-color: var(--accent-color);
     border-radius: 2px;
 }
 
 /* ========================================
-   特徴セクション
+   つくば市の3つの側面
    ======================================== */
 
-.features {
-    background-color: var(--bg-light);
+.aspects {
+    background-color: var(--bg-white);
     padding: 80px 20px;
 }
 
 /* グリッドレイアウト（3列） */
-.features-grid {
+.aspects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 35px;
 }
 
-/* 特徴カード */
-.feature-card {
-    background-color: var(--bg-white);
-    padding: 30px;
+/* 側面カード */
+.aspect-card {
+    background-color: var(--bg-light);
+    padding: 40px 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    border-top: 4px solid var(--accent-color);
+    border-left: 4px solid var(--accent-color);
 }
 
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.aspect-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* 特徴カードのアイコン */
-.feature-icon {
-    font-size: 60px;
+/* 側面カードのアイコン */
+.aspect-icon {
+    font-size: 56px;
     margin-bottom: 15px;
 }
 
-.feature-card h3 {
-    font-size: 22px;
+.aspect-card h3 {
+    font-size: 24px;
     margin-bottom: 15px;
-    color: var(--primary-color);
-    letter-spacing: 0.5px;
+    color: var(--text-dark);
 }
 
-.feature-card p {
+.aspect-card p {
     color: var(--text-light);
     line-height: 1.8;
     font-size: 15px;
 }
 
 /* ========================================
-   学びのカード
+   アトラクション（施設・ラーメン・遊び場）
    ======================================== */
 
-.learning-cards {
-    background-color: var(--bg-white);
+.attractions {
+    background-color: var(--bg-light);
     padding: 80px 20px;
 }
 
-/* 学びのカードグリッド（4列） */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+.attractions-light {
+    background-color: var(--bg-white);
 }
 
-/* 見どころカード */
-.learning-card {
-    background-color: var(--bg-light);
+/* アトラクショングリッド（3列） */
+.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* アトラクションカード */
+.attraction-card {
+    background-color: var(--bg-white);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--border-color);
 }
 
-.learning-card:hover {
+.attraction-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* カードの画像部分 */
-.card-image {
+/* カードのヘッダー部分 */
+.card-header {
     background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
-    padding: 40px 20px;
+    padding: 30px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 150px;
-}
-
-.image-placeholder {
-    font-size: 80px;
+    min-height: 120px;
+    font-size: 60px;
 }
 
 /* カード内のテキスト部分 */
-.learning-card h3 {
+.attraction-card h3 {
     font-size: 20px;
     margin: 20px 20px 10px 20px;
-    color: var(--primary-color);
-    letter-spacing: 0.5px;
+    color: var(--text-dark);
 }
 
-.learning-card p {
-    margin: 0 20px 20px 20px;
+.attraction-card .description {
+    margin: 0 20px 15px 20px;
     color: var(--text-light);
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+.attraction-card .highlight {
+    margin: 15px 20px 20px 20px;
+    padding: 10px 15px;
+    background-color: var(--bg-light);
+    border-left: 3px solid var(--accent-color);
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 500;
 }
 
 /* ========================================
-   詳細情報セクション
+   CTAセクション
    ======================================== */
 
 .cta-section {
-    background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+    background: linear-gradient(135deg, #8B6F47 0%, #5D4E37 100%);
     color: white;
     padding: 80px 20px;
     text-align: center;
@@ -302,7 +327,7 @@ body {
 
 .cta-content h2 {
     font-size: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     letter-spacing: 1px;
 }
 
@@ -311,196 +336,44 @@ body {
     margin-bottom: 15px;
     line-height: 1.8;
     opacity: 0.95;
-    font-weight: 300;
 }
 
-/* CTAボタングループ */
-.cta-buttons {
-    margin-top: 40px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+.cta-message {
+    font-size: 20px;
+    margin: 30px 0;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .button {
-    padding: 15px 40px;
-    border-radius: 4px;
+    display: inline-block;
+    padding: 15px 45px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-size: 16px;
     border: 2px solid transparent;
+    margin-top: 20px;
 }
 
 /* プライマリボタン */
 .button-primary {
-    background-color: var(--accent-color);
-    color: white;
+    background-color: white;
+    color: var(--accent-color);
 }
 
 .button-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background-color: #16A085;
-}
-
-/* セカンダリボタン */
-.button-secondary {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.button-secondary:hover {
-    background-color: white;
-    color: var(--primary-color);
-    transform: translateY(-3px);
 }
 
 /* ========================================
-   パン屋セクション
+   フッター
    ======================================== */
-
-.bakeries {
-    background-color: var(--bg-white);
-    padding: 80px 20px;
-}
-
-/* パン屋グリッド */
-.bakeries-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-/* パン屋カード */
-.bakery-card {
-    background-color: var(--bg-light);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid var(--accent-color);
-}
-
-.bakery-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* パン屋アイコン */
-.bakery-icon {
-    font-size: 50px;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.bakery-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-    color: var(--primary-color);
-    letter-spacing: 0.5px;
-    font-weight: 600;
-}
-
-.bakery-location {
-    font-size: 13px;
-    color: var(--accent-color);
-    margin-bottom: 12px;
-    font-weight: 500;
-}
-
-.bakery-card p {
-    color: var(--text-light);
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* ========================================
-   地図セクション
-   ======================================== */
-
-.map-section {
-    background-color: var(--bg-light);
-    padding: 80px 20px;
-}
-
-.map-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-/* 地図画像領域 */
-.map-image {
-    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
-    border-radius: 8px;
-    padding: 60px 20px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.map-placeholder {
-    font-size: 120px;
-    margin-bottom: 20px;
-}
-
-.map-info {
-    color: white;
-    font-size: 16px;
-    line-height: 1.8;
-    margin: 0;
-    opacity: 0.95;
-}
-
-/* 地図詳細情報 */
-.map-details {
-    background-color: var(--bg-white);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.map-details h3 {
-    font-size: 24px;
-    color: var(--primary-color);
-    margin-bottom: 25px;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-}
-
-.access-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.access-list li {
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-dark);
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.access-list li:last-child {
-    border-bottom: none;
-}
-
-.access-list strong {
-    color: var(--primary-color);
-    font-weight: 600;
-}
 
 .footer {
-    background-color: #1A252F;
+    background-color: var(--primary-color);
     color: white;
     text-align: center;
     padding: 30px 20px;
@@ -509,7 +382,6 @@ body {
 .footer p {
     margin: 0;
     opacity: 0.8;
-    letter-spacing: 0.5px;
 }
 
 /* ========================================
@@ -519,7 +391,8 @@ body {
 @media (max-width: 768px) {
     /* キャッチコピーをスマートフォンサイズに調整 */
     .catchcopy {
-        font-size: 32px;
+        font-size: 36px;
+        letter-spacing: 1px;
     }
 
     .tagline {
@@ -533,12 +406,15 @@ body {
     }
 
     /* パディング調整 */
-    .features,
-    .learning-cards,
-    .bakeries,
-    .map-section,
+    .aspects,
+    .attractions,
     .cta-section {
         padding: 60px 20px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+        min-height: 350px;
     }
 
     /* ハンバーガーメニューを表示 */
@@ -574,23 +450,12 @@ body {
     }
 
     /* グリッドカラムを1列に調整 */
-    .features-grid,
-    .cards-grid,
-    .bakeries-grid {
+    .aspects-grid,
+    .attractions-grid {
         grid-template-columns: 1fr;
     }
 
-    /* 地図コンテンツを1列に調整 */
-    .map-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    /* CTAボタンを縦並びに */
-    .cta-buttons {
-        flex-direction: column;
-    }
-
+    /* CTAボタンを100%幅に */
     .button {
         width: 100%;
     }
@@ -617,7 +482,7 @@ html {
     }
 }
 
-.feature-card,
-.learning-card {
+.aspect-card,
+.attraction-card {
     animation: fadeIn 0.6s ease-out;
 }

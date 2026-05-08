@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initMenuToggle();
     initScrollAnimation();
-    debugLog('ページの初期化が完了しました');
+    
+    // 初期化完了ログ
+    debugLog('ページ初期化が完了しました');
 });
 
 /* ========================================
@@ -46,8 +48,6 @@ function initSmoothScroll() {
                 if (menuToggle.checked) {
                     menuToggle.checked = false;
                 }
-                
-                debugLog('セクション ' + targetId + ' にスクロールしました');
             }
         });
     });
@@ -65,12 +65,14 @@ function initMenuToggle() {
     // ハンバーガーメニューチェックボックスを取得
     const menuToggle = document.getElementById('menu-toggle');
     
+    // ナビゲーションメニューを取得
+    const navMenu = document.querySelector('.nav-menu');
+    
     // ウィンドウサイズが変わったときの処理
     window.addEventListener('resize', function() {
         // 画面幅が768px以上の場合、メニューを閉じる
         if (window.innerWidth > 768) {
             menuToggle.checked = false;
-            debugLog('画面サイズが変更されました - メニューを閉じています');
         }
     });
 }
@@ -87,7 +89,7 @@ function initMenuToggle() {
 function initScrollAnimation() {
     // アニメーション対象の要素を取得
     const animateElements = document.querySelectorAll(
-        '.feature-card, .learning-card, .cta-content'
+        '.aspect-card, .attraction-card'
     );
     
     // IntersectionObserver を使用（要素がビューポートに入ったかを検出）
@@ -123,7 +125,7 @@ function initScrollAnimation() {
  * @param {string} className - 追加するクラス名
  */
 function addClass(element, className) {
-    if (element.classList) {
+    if (element && element.classList) {
         element.classList.add(className);
     }
 }
@@ -134,7 +136,7 @@ function addClass(element, className) {
  * @param {string} className - 削除するクラス名
  */
 function removeClass(element, className) {
-    if (element.classList) {
+    if (element && element.classList) {
         element.classList.remove(className);
     }
 }
@@ -147,5 +149,11 @@ function debugLog(message) {
     console.log('[つくば市サイト] ' + message);
 }
 
-// ページ読み込み完了ログ
-debugLog('つくば市紹介ページが正常に読み込まれました');
+/**
+ * ユーザーがクリックしたセクション情報を記録する関数
+ * ページの使い方を分析するのに役立ちます
+ * @param {string} sectionName - クリックされたセクション名
+ */
+function trackUserInteraction(sectionName) {
+    debugLog('ユーザーが' + sectionName + 'をクリックしました');
+}
